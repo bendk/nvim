@@ -9,12 +9,7 @@ nnoremap <silent> <Leader>b :BufExplorer<CR>
 noremap <Leader>y :Yanks<cr>
 " Leader mapping help
 nmap <Leader>h <Plug>(FollowMyLead)
-" Undo
-nmap <Leader>u <Plug>(RepeatUndo)
-" Redo
-nmap <Leader>r <Plug>(RepeatRedo)
-" View undo tree
-nmap <Leader>U :UndoTreeToggle<cr>
+nmap <Leader>u :UndoTreeToggle<cr>
 " Close Window
 nmap <Leader>w :bd<CR>
 " Format paragraph
@@ -34,8 +29,18 @@ nmap <leader>p <Plug>yankstack_substitute_older_paste
 " Next yank
 nmap <leader>P <Plug>yankstack_substitute_newer_paste
 
+" Autocomplete with tab
+inoremap <Tab> <C-R>=pumvisible() ? "\<lt>C-p>" : "\<lt>Tab>"<CR>
+" move by lines
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
 
 " Various settings that I like
+set completeopt=menuone
 set ignorecase
 set smartcase
 set hlsearch
@@ -50,6 +55,12 @@ filetype on
 filetype indent on
 filetype plugin indent on
 syntax enable
+
+augroup LongLines
+  autocmd!
+  autocmd Filetype * match none
+  autocmd Filetype python match ErrorMsg '\%>80v.\+'
+augroup END
 
 " Plugins
 " curl -flo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -66,19 +77,16 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'vim-scripts/DeleteTrailingWhitespace'
 Plug 'vim-scripts/undotree.vim'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
-Plug 'honza/vim-snippets'
-Plug '~/vim-hyperdrive'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'maxbrunsfeld/vim-yankstack'
+Plug 'Shougo/deoplete.nvim'
 Plug 'hynek/vim-python-pep8-indent'
-"Plug 'AutoComplPop'
-" Autocomplete with tabw
-" inoremap <Tab> <C-R>=pumvisible() ? "\<lt>CR>" : "\<lt>Tab>"<CR>
-" let g:acp_behaviorKeywordCommand = "\<C-p>"
+Plug 'rking/ag.vim'
+Plug '~/vim-hyperdrive'
 call plug#end()
 
 let g:UltiSnipsExpandTrigger = "<C-t>"
+let g:UltiSnipsListSnippets = "<C-s>"
 let UltiSnipsJumpForwardTrigger = "<C-t>"
 let UltiSnipsJumpForwardTrigger = "<C-h>"
 
@@ -88,6 +96,4 @@ let g:yankstack_map_keys = 0
 let g:bufExplorerDisableDefaultKeyMapping=1
 let g:bufExplorerDefaultHelp=0
 let g:yankstack_yank_keys = ['c', 'C', 'd', 'D', 'y', 'Y']
-
-" Make sure vim-repeat is loaded so our undo/redo keys work
-runtime! autoload/repeat.vim
+let g:deoplete#enable_at_startup = 1
