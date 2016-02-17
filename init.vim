@@ -79,7 +79,6 @@ Plug 'vim-scripts/DeleteTrailingWhitespace'
 Plug 'vim-scripts/undotree.vim'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'maxbrunsfeld/vim-yankstack'
-Plug 'Shougo/deoplete.nvim'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'chase/vim-ansible-yaml'
 Plug 'rking/ag.vim'
@@ -97,4 +96,3 @@ let g:yankstack_map_keys = 0
 let g:bufExplorerDisableDefaultKeyMapping=1
 let g:bufExplorerDefaultHelp=0
 let g:yankstack_yank_keys = ['c', 'C', 'd', 'D', 'y', 'Y']
-let g:deoplete#enable_at_startup = 1
