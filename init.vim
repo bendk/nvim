@@ -5,11 +5,13 @@ inoremap jk <Esc>
 let mapleader=","
 " Buffers
 nnoremap <silent> <Leader>b :BufExplorer<CR>
-" Yank History
-noremap <Leader>y :Yanks<cr>
 " Leader mapping help
 nmap <Leader>h <Plug>(FollowMyLead)
 nmap <Leader>u :UndoTreeToggle<cr>
+" Ctrl-P
+nmap <Leader>p :CtrlP<CR>
+" Ctrl-P buffers
+nmap <Leader>b :CtrlPBuffer<CR>
 " Close Window
 nmap <Leader>w :bd<CR>
 " Format paragraph
@@ -25,9 +27,9 @@ nmap <Leader>cp :cp<cr>
 " Current change
 nmap <Leader>cc :cc<cr>
 " Prev yank
-nmap <leader>p <Plug>yankstack_substitute_older_paste
+nmap <leader>y <Plug>yankstack_substitute_older_paste
 " Next yank
-nmap <leader>P <Plug>yankstack_substitute_newer_paste
+nmap <leader>Y <Plug>yankstack_substitute_newer_paste
 
 " Autocomplete with tab
 inoremap <Tab> <C-R>=pumvisible() ? "\<lt>C-p>" : "\<lt>Tab>"<CR>
@@ -38,6 +40,12 @@ inoremap <A-j> <Esc>:m .+1<CR>==gi
 inoremap <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
+
+" Emmet
+let g:user_emmet_expandabbr_key = '<C-y><C-y>'
+
+" Buffer Jump
+nmap <Space> <Plug>BufferjumpStart
 
 " Various settings that I like
 set completeopt=menuone
@@ -69,6 +77,7 @@ Plug 'bendk/vim-follow-my-lead'
 Plug 'bling/vim-airline'
 Plug 'jamessan/vim-gnupg'
 Plug 'justinmk/vim-sneak'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mattn/emmet-vim'
 Plug 'SirVer/ultisnips'
 Plug 'tomtom/tcomment_vim'
@@ -82,7 +91,7 @@ Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'chase/vim-ansible-yaml'
 Plug 'rking/ag.vim'
-Plug '~/vim-hyperdrive'
+Plug '~/vim-bufferjump'
 call plug#end()
 
 let g:UltiSnipsExpandTrigger = "<C-t>"
