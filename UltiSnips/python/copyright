@@ -19,3 +19,9 @@ snippet acc "Amara Copyright notice"
 
 
 endsnippet
+
+snippet ecc "Amara Enterprise Copyright notice"
+# Copyright `date +%Y` Participatory Culture Foundation, All Rights Reserved
+
+
+endsnippet
