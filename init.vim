@@ -41,22 +41,10 @@ nmap <leader>y <Plug>yankstack_substitute_older_paste
 nmap <leader>Y <Plug>yankstack_substitute_newer_paste
 " Emmet
 let g:user_emmet_expandabbr_key = '<C-e>'
-" Jedi goto definition
-nmap <Leader>d <nop>
-" Jedi Rename
-nmap <Leader>r <nop>
 " Buffer Jump
 " nmap <Space> <Plug>BufferjumpStart
 " Load the correct virtualenv
 autocmd BufNewFile,BufRead /home/ben/unisubs/* VirtualEnvActivate unisubs
-" Jedi
-let g:jedi#auto_vim_configuration = 0
-let g:jedi#goto_command="<Leader>d"
-let g:jedi#goto_assignments_command=""
-let g:jedi#goto_definitions_command=""
-let g:jedi#usages_command=""
-let g:jedi#rename_command="<Leader>r"
-let g:jedi#documentation_command=""
 
 let completeopt="menuone,longest,preview"
 " vim-gnupg
@@ -90,7 +78,6 @@ set mouse=""
 set expandtab
 set wildmode=longest:full
 set wildmenu
-colorscheme peachpuff
 filetype on
 filetype indent on
 filetype plugin indent on
@@ -127,9 +114,7 @@ Plug 'hynek/vim-python-pep8-indent'
 Plug 'chase/vim-ansible-yaml'
 Plug 'mileszs/ack.vim'
 Plug '~/vim-bufferjump'
-Plug 'ervandew/supertab'
 Plug 'jmcantrell/vim-virtualenv'
-Plug 'davidhalter/jedi-vim'
 call plug#end()
 
 let g:UltiSnipsExpandTrigger = "<C-t>"
@@ -143,3 +128,6 @@ let g:yankstack_map_keys = 0
 let g:bufExplorerDisableDefaultKeyMapping=1
 let g:bufExplorerDefaultHelp=0
 let g:yankstack_yank_keys = ['c', 'C', 'd', 'D', 'y', 'Y']
+
+" colors
+colorscheme peachpuff
