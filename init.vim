@@ -130,4 +130,5 @@ let g:bufExplorerDefaultHelp=0
 let g:yankstack_yank_keys = ['c', 'C', 'd', 'D', 'y', 'Y']
 
 " colors
-colorscheme peachpuff
+set termguicolors
+colorscheme bdk
