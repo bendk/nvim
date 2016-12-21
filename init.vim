@@ -5,11 +5,11 @@ nnoremap <silent> <Leader>b :BufExplorer<CR>
 " Leader mapping help
 nmap <Leader>h <Plug>(FollowMyLead)
 nmap <Leader>u :UndoTreeToggle<cr>
-" Ctrl-P
+" oPen file
 nmap <Leader>p :CtrlP<CR>
-let g:ctrlp_working_path_mode = 'wa'
-" Ctrl-P buffers
+" open Buffer
 nmap <Leader>b :CtrlPBuffer<CR>
+let g:ctrlp_working_path_mode = 'wa'
 " easymotion
 let g:EasyMotion_smartcase = 1
 let g:EasyMotion_keys = 'OEUIDHTN.PCRJKMWAS'
@@ -23,8 +23,8 @@ let g:clever_f_fix_key_direction = 1
 let g:clever_f_chars_match_any_signs = 1
 nmap ; <Plug>(clever-f-repeat-forward)
 nmap , <Plug>(clever-f-repeat-back)
-" Close Window
-nmap <Leader>w :bd<CR>
+" Delete Trailing Whitespace
+nmap <Leader>w :DeleteTrailingWhitespace<CR>
 " Format paragraph
 nmap <Leader>f gqip
 " Change list
@@ -72,6 +72,7 @@ set clipboard=unnamedplus
 set completeopt=menuone
 set ignorecase
 set smartcase
+set hidden
 set list
 set listchars=tab:>-,trail:-,extends:\
 set mouse=""

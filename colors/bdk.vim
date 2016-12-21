@@ -37,12 +37,14 @@ let s:colors.white = 'ffffff'
 let s:colors.nobel = '999999'
 let s:colors.acadia = '777777'
 let s:colors.blackpearl = '090c0d'
+let s:colors.greypearl = '0F1516'
+let s:colors.oxfordblue = '273338'
 
-let s:colors.mayablue = '639DF9'
-let s:colors.mustard = 'FFD951'
+let s:colors.mayablue = '639df9'
+let s:colors.mustard = 'ffd951'
 let s:colors.pumpkin = 'ff7818'
 let s:colors.darkred = '8f0000'
-let s:colors.turquoise = '6BEAD7'
+let s:colors.turquoise = '6bead7'
 
 function! s:HL(group, fg, bg, ...)
   let attrs = (a:0 >= 1) ? a:1 : ''
@@ -82,6 +84,7 @@ call s:HL('Function', 'mayablue', 'bg')
 call s:HL('Identifier', 'mayablue', 'bg')
 call s:HL('String', 'pumpkin', 'bg')
 call s:HL('Comment', 'nobel', 'bg')
+call s:HL('NonText', 'nobel', 'bg')
 call s:HL('Type', 'turquoise', 'bg', 'NONE')
 call s:HL('SpecialKey', 'acadia', 'bg')
 
@@ -91,5 +94,10 @@ call s:HL('IncSearch', 'bg', 'mustard')
 call s:HL('Error', 'white', 'darkred')
 call s:HL('ErrorMsg', 'white', 'darkred')
 call s:HL('WarningMsg', 'white', 'darkred')
+
+call s:HL('PMenu', 'fg', 'greypearl')
+call s:HL('PMenuSel', 'blackpearl', 'pumpkin')
+call s:HL('PmenuSbar', 'fg', 'greypearl')
+call s:HL('PmenuThumb', 'fg', 'oxfordblue')
 
 call s:HL('PythonBuiltin', 'fg', 'bg')
