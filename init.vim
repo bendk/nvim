@@ -21,6 +21,7 @@ map s <Plug>(easymotion-s)
 let g:clever_f_smart_case = 1
 let g:clever_f_fix_key_direction = 1
 let g:clever_f_chars_match_any_signs = 1
+let g:clever_f_mark_char = 0
 nmap ; <Plug>(clever-f-repeat-forward)
 nmap , <Plug>(clever-f-repeat-back)
 " Delete Trailing Whitespace
@@ -52,6 +53,13 @@ let g:GPGExecutable="gpg2"
 " vim-ack
 let g:ackprg = 'rg --vimgrep --smart-case'
 cnoreabbrev a Ack
+" I use the arrow keys to move around.  Remap them to more useful things
+" Jump tag
+noremap jt *
+" Jump match
+noremap jm %
+" Jump alternate
+nnoremap ja :b#<CR>
 " Incsearch
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)

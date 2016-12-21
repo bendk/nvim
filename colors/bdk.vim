@@ -88,8 +88,8 @@ call s:HL('NonText', 'nobel', 'bg')
 call s:HL('Type', 'turquoise', 'bg', 'NONE')
 call s:HL('SpecialKey', 'acadia', 'bg')
 
-call s:HL('Search', 'bg', 'mustard')
-call s:HL('IncSearch', 'bg', 'mustard')
+call s:HL('Search', 'blackpearl', 'mustard')
+call s:HL('IncSearch', 'blackpearl', 'mustard')
 
 call s:HL('Error', 'white', 'darkred')
 call s:HL('ErrorMsg', 'white', 'darkred')
