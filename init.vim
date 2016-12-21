@@ -58,6 +58,12 @@ cnoreabbrev a Ack
 noremap jt *
 " Jump match
 noremap jm %
+" Jump end
+nnoremap je G
+" Jump home
+nnoremap jh gg
+" Jump back
+nnoremap jb ``
 " Jump alternate
 nnoremap ja :b#<CR>
 " Incsearch
