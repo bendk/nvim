@@ -1,29 +1,15 @@
 " Leader mappings
 let mapleader=","
-" Buffers
-nnoremap <silent> <Leader>b :BufExplorer<CR>
 " Leader mapping help
 nmap <Leader>h <Plug>(FollowMyLead)
+" Undotree
 nmap <Leader>u :UndoTreeToggle<cr>
 " oPen file
-nmap <Leader>p :CtrlP<CR>
-" open Buffer
-nmap <Leader>b :CtrlPBuffer<CR>
-let g:ctrlp_working_path_mode = 'wa'
-" easymotion
-let g:EasyMotion_smartcase = 1
-let g:EasyMotion_keys = 'OEUIDHTN.PCRJKMWAS'
-let g:EasyMotion_use_upper = 1
-map <Space> <Plug>(easymotion-prefix)
-map <Space><Space> <Plug>(easymotion-repeat)
-map s <Plug>(easymotion-s)
-" clever-f
-let g:clever_f_smart_case = 1
-let g:clever_f_fix_key_direction = 1
-let g:clever_f_chars_match_any_signs = 1
-let g:clever_f_mark_char = 0
-nmap ; <Plug>(clever-f-repeat-forward)
-nmap , <Plug>(clever-f-repeat-back)
+nmap <Leader>pp :CtrlP<CR>
+" oPen Recent file
+nmap <Leader>pb :CtrlPMRU<CR>
+" oPen Buffer
+nmap <Leader>pb :CtrlPBuffer<CR>
 " Delete Trailing Whitespace
 nmap <Leader>w :DeleteTrailingWhitespace<CR>
 " Format paragraph
@@ -40,22 +26,15 @@ nmap <Leader>cc :cc<cr>
 nmap <leader>y <Plug>yankstack_substitute_older_paste
 " Next yank
 nmap <leader>Y <Plug>yankstack_substitute_newer_paste
-" Emmet
-let g:user_emmet_expandabbr_key = '<C-e>'
-" Buffer Jump
-" nmap <Space> <Plug>BufferjumpStart
-" Load the correct virtualenv
-autocmd BufNewFile,BufRead /home/ben/unisubs/* VirtualEnvActivate unisubs
+" Argwrap
+nmap <leader>a :ArgWrap<CR>
 
-let completeopt="menuone,longest,preview"
-" vim-gnupg
-let g:GPGExecutable="gpg2"
-" vim-ack
-let g:ackprg = 'rg --vimgrep --smart-case'
-cnoreabbrev a Ack
+" Other mappings, not related to plugins:
 " I use the arrow keys to move around.  Remap them to more useful things
 " Jump tag
 noremap jt *
+" Jump definition
+noremap jd <C-]>
 " Jump match
 noremap jm %
 " Jump end
@@ -66,6 +45,37 @@ nnoremap jh gg
 nnoremap jb ``
 " Jump alternate
 nnoremap ja :b#<CR>
+" Jump search
+noremap js <Plug>(incsearch-forward)
+
+" Ctrl-P
+let g:ctrlp_working_path_mode = 'wa'
+let g:ctrlp_open_new_file = 'r'
+" easymotion
+let g:EasyMotion_smartcase = 1
+let g:EasyMotion_keys = 'OEUIDHTN.PCRJKMWAS'
+let g:EasyMotion_use_upper = 1
+map <Space> <Plug>(easymotion-prefix)
+map <Space><Space> <Plug>(easymotion-repeat)
+map s <Plug>(easymotion-s)
+" clever-f
+let g:clever_f_smart_case = 1
+let g:clever_f_fix_key_direction = 1
+let g:clever_f_chars_match_any_signs = 1
+let g:clever_f_mark_char = 0
+nmap ; <Plug>(clever-f-repeat-forward)
+nmap , <Plug>(clever-f-repeat-back)
+" Emmet
+let g:user_emmet_expandabbr_key = '<C-e>'
+" Buffer Jump
+" nmap <Space> <Plug>BufferjumpStart
+
+let completeopt="menuone,longest,preview"
+" vim-gnupg
+let g:GPGExecutable="gpg2"
+" vim-ack
+let g:ackprg = 'rg --vimgrep --smart-case'
+cnoreabbrev a Ack
 " Incsearch
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
@@ -123,14 +133,15 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'vim-scripts/DeleteTrailingWhitespace'
 Plug 'vim-scripts/undotree.vim'
-Plug 'jlanzarotta/bufexplorer'
 Plug 'maxbrunsfeld/vim-yankstack'
+Plug 'mileszs/ack.vim'
+Plug '~/vim-bufferjump'
+Plug 'wellle/targets.vim'
+Plug 'FooSoft/vim-argwrap'
+" syntax
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'dag/vim-fish'
 Plug 'chase/vim-ansible-yaml'
-Plug 'mileszs/ack.vim'
-Plug '~/vim-bufferjump'
-Plug 'jmcantrell/vim-virtualenv'
 call plug#end()
 
 let g:UltiSnipsExpandTrigger = "<C-t>"
@@ -141,8 +152,6 @@ let UltiSnipsJumpForwardTrigger = "<C-h>"
 " Plugin Settings
 let g:gitgutter_map_keys = 0
 let g:yankstack_map_keys = 0
-let g:bufExplorerDisableDefaultKeyMapping=1
-let g:bufExplorerDefaultHelp=0
 let g:yankstack_yank_keys = ['c', 'C', 'd', 'D', 'y', 'Y']
 
 " colors
