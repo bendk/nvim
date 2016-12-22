@@ -5,11 +5,9 @@ nmap <Leader>h <Plug>(FollowMyLead)
 " Undotree
 nmap <Leader>u :UndoTreeToggle<cr>
 " oPen file
-nmap <Leader>pp :CtrlP<CR>
-" oPen Recent file
-nmap <Leader>pb :CtrlPMRU<CR>
+nmap <Leader>p :CtrlP<CR>
 " oPen Buffer
-nmap <Leader>pb :CtrlPBuffer<CR>
+nmap <Leader>b :CtrlPBuffer<CR>
 " Delete Trailing Whitespace
 nmap <Leader>w :DeleteTrailingWhitespace<CR>
 " Format paragraph
@@ -46,7 +44,7 @@ nnoremap jb ``
 " Jump alternate
 nnoremap ja :b#<CR>
 " Jump search
-noremap js <Plug>(incsearch-forward)
+map js /
 
 " Ctrl-P
 let g:ctrlp_working_path_mode = 'wa'
