@@ -5,13 +5,17 @@ nmap <Leader>h <Plug>(FollowMyLead)
 " Undotree
 nmap <Leader>u :UndoTreeToggle<cr>
 " oPen file
-nmap <Leader>p :CtrlP<CR>
-" oPen Buffer
-nmap <Leader>b :CtrlPBuffer<CR>
+nmap <Leader>p :CtrlPMixed<CR>
 " Delete Trailing Whitespace
 nmap <Leader>w :DeleteTrailingWhitespace<CR>
 " Format paragraph
 nmap <Leader>f gqip
+" Next buffer
+nmap <Leader>bn :bn<cr>
+" Prev buffer
+nmap <Leader>bp :bp<cr>
+" Delete buffer
+nmap <Leader>bd :bd<cr>
 " Change list
 nmap <Leader>cl :cl<cr>
 " Next change
@@ -20,6 +24,8 @@ nmap <Leader>cn :cn<cr>
 nmap <Leader>cp :cp<cr>
 " Current change
 nmap <Leader>cc :cc<cr>
+" Close changelist
+nmap <Leader>cd :cclose<cr>
 " Prev yank
 nmap <leader>y <Plug>yankstack_substitute_older_paste
 " Next yank
@@ -29,6 +35,10 @@ nmap <leader>a :ArgWrap<CR>
 
 " Other mappings, not related to plugins:
 " I use the arrow keys to move around.  Remap them to more useful things
+map j <Nop>
+map k <Nop>
+map h <Nop>
+map l <Nop>
 " Jump tag
 noremap jt *
 " Jump definition
@@ -43,8 +53,33 @@ nnoremap jh gg
 nnoremap jb ``
 " Jump alternate
 nnoremap ja :b#<CR>
-" Jump search
-map js /
+" Jump to buffer
+nmap jkh <Plug>AirlineSelectTab1
+nmap jkt <Plug>AirlineSelectTab2
+nmap jkn <Plug>AirlineSelectTab3
+nmap jks <Plug>AirlineSelectTab4
+nmap jkg <Plug>AirlineSelectTab5
+nmap jkc <Plug>AirlineSelectTab6
+nmap jkr <Plug>AirlineSelectTab7
+nmap jkm <Plug>AirlineSelectTab8
+nmap jkv <Plug>AirlineSelectTab9
+
+" Airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+let g:airline#extensions#tabline#fnamemod = ':p:t'
+let g:airline#extensions#tabline#buffer_idx_format = {
+      \ '1': 'H ',
+      \ '2': 'T ',
+      \ '3': 'N ',
+      \ '4': 'S ',
+      \ '5': 'G ',
+      \ '6': 'C ',
+      \ '7': 'R ',
+      \ '8': 'M ',
+      \ '9': 'V '
+      \}
 
 " Ctrl-P
 let g:ctrlp_working_path_mode = 'wa'

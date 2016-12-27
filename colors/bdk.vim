@@ -71,6 +71,8 @@ function! s:HL(group, fg, bg, ...)
 
   if strlen(attrs)
       let histring .= ' gui=' . attrs
+  else
+      let histring .= ' gui=NONE'
   endif
 
   execute histring
@@ -85,7 +87,7 @@ call s:HL('Identifier', 'mayablue', 'bg')
 call s:HL('String', 'pumpkin', 'bg')
 call s:HL('Comment', 'nobel', 'bg')
 call s:HL('NonText', 'nobel', 'bg')
-call s:HL('Type', 'turquoise', 'bg', 'NONE')
+call s:HL('Type', 'turquoise', 'bg')
 call s:HL('SpecialKey', 'acadia', 'bg')
 
 call s:HL('Search', 'blackpearl', 'mustard')
@@ -99,5 +101,3 @@ call s:HL('PMenu', 'fg', 'greypearl')
 call s:HL('PMenuSel', 'blackpearl', 'pumpkin')
 call s:HL('PmenuSbar', 'fg', 'greypearl')
 call s:HL('PmenuThumb', 'fg', 'oxfordblue')
-
-call s:HL('PythonBuiltin', 'fg', 'bg')
