@@ -53,6 +53,15 @@ nnoremap jh gg
 nnoremap jb ``
 " Jump alternate
 nnoremap ja :b#<CR>
+" Jump by indent
+map jIU <Plug>(IndentWisePreviousLesserIndent)
+map jII <Plug>(IndentWisePreviousEqualIndent)
+map jID <Plug>(IndentWisePreviousGreaterIndent)
+map jIB <Plug>(IndentWiseBlockScopeBoundaryBegin)
+map jiu <Plug>(IndentWiseNextLesserIndent)
+map jii <Plug>(IndentWiseNextEqualIndent)
+map jid <Plug>(IndentWiseNextGreaterIndent)
+map jib <Plug>(IndentWiseBlockScopeBoundaryEnd)
 " Jump to buffer
 nmap jkh <Plug>AirlineSelectTab1
 nmap jkt <Plug>AirlineSelectTab2
@@ -122,6 +131,8 @@ map *  <Plug>(incsearch-nohl-*)
 map #  <Plug>(incsearch-nohl-#)
 map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
+" Indentwise
+let g:indentwise_suppress_keymaps = 1
 " Don't go into ex mode
 nmap Q <nop>
 " Various settings that I like
@@ -171,6 +182,7 @@ Plug 'mileszs/ack.vim'
 Plug '~/vim-bufferjump'
 Plug 'wellle/targets.vim'
 Plug 'FooSoft/vim-argwrap'
+Plug 'jeetsukumaran/vim-indentwise'
 " syntax
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'dag/vim-fish'
