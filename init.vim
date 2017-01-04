@@ -147,6 +147,7 @@ set mouse=""
 set expandtab
 set wildmode=longest:full
 set wildmenu
+set wildignore="*.py"
 filetype on
 filetype indent on
 filetype plugin indent on
