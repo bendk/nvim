@@ -32,6 +32,8 @@ nmap <leader>y <Plug>yankstack_substitute_older_paste
 nmap <leader>Y <Plug>yankstack_substitute_newer_paste
 " Argwrap
 nmap <leader>a :ArgWrap<CR>
+" Grep
+nmap <leader>g :Ack<Space>
 
 " Other mappings, not related to plugins:
 " I use the arrow keys to move around.  Remap them to more useful things
@@ -117,7 +119,6 @@ let completeopt="menuone,longest,preview"
 let g:GPGExecutable="gpg2"
 " vim-ack
 let g:ackprg = 'rg --vimgrep --smart-case'
-cnoreabbrev a Ack
 " Incsearch
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
@@ -191,9 +192,8 @@ Plug 'chase/vim-ansible-yaml'
 call plug#end()
 
 let g:UltiSnipsExpandTrigger = "<C-t>"
-let g:UltiSnipsListSnippets = "<C-s>"
 let UltiSnipsJumpForwardTrigger = "<C-t>"
-let UltiSnipsJumpForwardTrigger = "<C-h>"
+let UltiSnipsJumpBackwardTrigger = "<C-h>"
 
 " Plugin Settings
 let g:gitgutter_map_keys = 0
