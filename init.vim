@@ -74,6 +74,12 @@ nmap jkc <Plug>AirlineSelectTab6
 nmap jkr <Plug>AirlineSelectTab7
 nmap jkm <Plug>AirlineSelectTab8
 nmap jkv <Plug>AirlineSelectTab9
+" Swap arg left
+nnoremap kl :SidewaysLeft<CR>
+nnoremap kr :SidewaysRight<CR>
+
+omap k <Plug>SidewaysArgumentTextobjA
+xmap k <Plug>SidewaysArgumentTextobjA
 
 " Airline
 let g:airline#extensions#tabline#enabled = 1
@@ -184,6 +190,7 @@ Plug '~/vim-bufferjump'
 Plug 'wellle/targets.vim'
 Plug 'FooSoft/vim-argwrap'
 Plug 'jeetsukumaran/vim-indentwise'
+Plug 'AndrewRadev/sideways.vim'
 " syntax
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'dag/vim-fish'
