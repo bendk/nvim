@@ -137,7 +137,6 @@ let g:indentwise_suppress_keymaps = 1
 " Don't go into ex mode
 nmap Q <nop>
 " Various settings that I like
-set clipboard=unnamedplus
 set completeopt=menuone
 set ignorecase
 set smartcase
