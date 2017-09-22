@@ -191,6 +191,7 @@ Plug 'wellle/targets.vim'
 Plug 'FooSoft/vim-argwrap'
 Plug 'jeetsukumaran/vim-indentwise'
 Plug 'AndrewRadev/sideways.vim'
+Plug 'tommcdo/vim-lion'
 " syntax
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'dag/vim-fish'
