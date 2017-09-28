@@ -140,6 +140,8 @@ map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
 " Indentwise
 let g:indentwise_suppress_keymaps = 1
+" Lion
+let g:lion_squeeze_spaces = 1
 " Don't go into ex mode
 nmap Q <nop>
 " Various settings that I like
@@ -196,6 +198,7 @@ Plug 'tommcdo/vim-lion'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'dag/vim-fish'
 Plug 'chase/vim-ansible-yaml'
+Plug 'martinda/Jenkinsfile-vim-syntax'
 call plug#end()
 
 let g:UltiSnipsExpandTrigger = "<C-t>"
