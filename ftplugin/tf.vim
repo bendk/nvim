@@ -1,4 +1,4 @@
 inoremap <buffer> ,. "$}
 inoremap <buffer> ., }"
-set sw=4
+set sw=2
 set tw=0
