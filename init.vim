@@ -34,6 +34,12 @@ nmap <leader>Y <Plug>yankstack_substitute_newer_paste
 nmap <leader>a :ArgWrap<CR>
 " Grep
 nmap <leader>g :Ack<Space>
+" Copy
+nmap <leader>c "+y<Space>
+" Paste
+nmap <leader>v "+p<Space>
+" Paste above
+nmap <leader>V "+P<Space>
 
 " Other mappings, not related to plugins:
 " I use the arrow keys to move around.  Remap them to more useful things
