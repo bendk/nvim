@@ -35,11 +35,11 @@ nmap <leader>a :ArgWrap<CR>
 " Grep
 nmap <leader>g :Ack<Space>
 " Copy
-nmap <leader>c "+y<Space>
+vmap <leader>c "+y
 " Paste
-nmap <leader>v "+p<Space>
+nmap <leader>v "+p
 " Paste above
-nmap <leader>V "+P<Space>
+nmap <leader>V "+P
 
 " Other mappings, not related to plugins:
 " I use the arrow keys to move around.  Remap them to more useful things
