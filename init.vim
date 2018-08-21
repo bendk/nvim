@@ -123,6 +123,7 @@ nmap ; <Plug>(clever-f-repeat-forward)
 nmap , <Plug>(clever-f-repeat-back)
 " Emmet
 let g:user_emmet_expandabbr_key = '<C-e>'
+imap <C-o> <C-e><Enter><Enter><Up><Tab>
 " Buffer Jump
 " nmap <Space> <Plug>BufferjumpStart
 
